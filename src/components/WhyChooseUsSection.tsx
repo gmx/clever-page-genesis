@@ -1,5 +1,5 @@
 
-import { CheckCircle, CheckIcon } from "lucide-react";
+import { Check } from "lucide-react";
 
 const WhyChooseUsSection = () => {
   const reasons = [
@@ -22,51 +22,38 @@ const WhyChooseUsSection = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <span className="inline-block text-company-orange font-medium mb-4">WHY CHOOSE US</span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              What Makes EvoDeus Different?
-            </h2>
-            <p className="text-gray-600 mb-10 text-lg">
-              We're more than just developers. We're strategic partners who understand your business needs and deliver solutions that drive growth and user satisfaction.
-            </p>
-            
-            <div className="space-y-6">
-              {reasons.map((reason, index) => (
-                <div key={index} className="flex gap-4 items-start">
-                  <div className="mt-1 text-company-orange">
-                    <CheckCircle className="h-6 w-6" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-xl mb-2">{reason.title}</h3>
-                    <p className="text-gray-600">{reason.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+    <section className="py-20 bg-white">
+      <div className="container">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-2">WHY CHOOSE EVODEUS?</h2>
+          <div className="h-1 w-20 bg-company-orange mx-auto mb-4"></div>
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-x-12 gap-y-6">
+          <div className="rounded-lg overflow-hidden shadow-xl col-span-1">
+            <img 
+              src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+              alt="Why Choose Us" 
+              className="w-full h-full object-cover"
+            />
           </div>
           
-          <div className="relative">
-            <div className="absolute -z-10 w-72 h-72 bg-company-orange/10 rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="transform md:translate-y-12">
-                <img 
-                  src="https://images.unsplash.com/photo-1493397212122-2b85dda8106b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                  alt="Office Meeting" 
-                  className="rounded-3xl shadow-xl h-80 w-full object-cover"
-                />
-              </div>
-              <div>
-                <img 
-                  src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                  alt="Team Working" 
-                  className="rounded-3xl shadow-xl h-80 w-full object-cover"
-                />
-              </div>
-            </div>
+          <div className="col-span-1 flex flex-col justify-center">
+            <ul className="space-y-6">
+              {reasons.map((reason, index) => (
+                <li key={index} className="flex">
+                  <div className="mr-4 mt-1">
+                    <div className="w-6 h-6 rounded-full bg-company-orange flex items-center justify-center text-white">
+                      <Check size={14} />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg mb-1">{reason.title}</h3>
+                    <p className="text-gray-600">{reason.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
